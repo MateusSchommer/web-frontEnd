@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo - Mateus Schommer</title>
+
+    <!-- Fonte externa (Google Fonts): Bricolage Grotesque -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;display=swap" rel="stylesheet">
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <header id="topo">
+        <h1>Mateus Schommer</h1>
+
+        <figure>
+            <img id="foto-perfil" src="imagens/img01.jpg" alt="Foto de Mateus Schommer" width="200">
+            <figcaption>Mateus Schommer</figcaption>
+        </figure>
+
+        <p class="subtitulo">Estudante de engenharia de software</p>
+
+        <nav>
+            <a href="#contato">Contato</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#resumo">Resumo</a>
+            <a href="#experiencia">Experiência</a>
+            <a href="#educacao">Educação</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <ul>
+                <li class="sem-icone"><strong>Telefone:</strong> (00) 00000-0000</li>
+                <li>
+                    <img src="icones/icon01.png" alt="Ícone de e-mail" width="16" height="16">
+                    <strong>E-mail:</strong> <a href="mailto:schommer@alunos.utfpr.edu.br">schommer@alunos.utfpr.edu.br</a>
+                </li>
+                <li>
+                    <img src="icones/icon02.png" alt="Ícone do LinkedIn" width="16" height="16">
+                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/seu-perfil" target="_blank">linkedin.com/in/seu-perfil</a>
+                </li>
+                <li>
+                    <img src="icones/icon03.png" alt="Ícone de localização" width="16" height="16">
+                    <strong>Cidade:</strong> Cornélio Procópio, Paraná
+                </li>
+            </ul>
+        </section>
+
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+            <ul>
+                <li class="tag">HTML</li>
+                <li class="tag">Java</li>
+                <li class="tag">C e C++</li>
+                <li class="tag">Git e GitHub</li>
+                <li class="tag">Lógica de programação</li>
+            </ul>
+        </section>
+
+        <section id="resumo">
+            <h2>Resumo</h2>
+            <p>Sou estudante da área de tecnologia e tenho interesse em desenvolvimento web e criação de interfaces.</p>
+            <p>Atualmente busco ampliar meus conhecimentos por meio de projetos acadêmicos e atividades práticas.</p>
+        </section>
+
+        <section id="ods">
+            <h2>ODS que pretendo contribuir</h2>
+            <figure>
+                <img src="imagens/img02.svg" alt="ODS 9 - Indústria, Inovação e Infraestrutura" width="200">
+                <figcaption>ODS 9 - Indústria, Inovação e Infraestrutura</figcaption>
+            </figure>
+            <p>
+                Acredito que posso contribuir com esse Objetivo de Desenvolvimento Sustentável
+                por meio do desenvolvimento de soluções tecnológicas e da inovação em processos
+                de software, contribuindo para uma infraestrutura mais eficiente e sustentável.
+            </p>
+        </section>
+
+        <section id="experiencia">
+            <h2>Experiência e Projetos</h2>
+
+            <article>
+                <h3>Projeto acadêmico extensionista</h3>
+                <p class="meta"><strong>Projeto de desenvolvimento web</strong> | Atualmente</p>
+                <ul>
+                    <li>Participação na elaboração e manutenção de aplicação web para gerenciamento 
+                        de um projeto extensionista da UTFPR.</li>
+                    <li>Utilização de ferramentas de desenvolvimento e controle de versão.</li>
+                    <li>Desenvolvimento de aplicações web em equipe.</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Outras experiências</h3>
+                <p>
+                    Experiências relacionadas a desenvolvimento de sistemas embarcados, 
+                    especialmente com Arduino e Raspberry Pi.
+                </p>
+            </article>
+        </section>
+
+        <section id="educacao">
+            <h2>Educação</h2>
+
+            <article>
+                <h3>Engenharia de Software</h3>
+                <p class="meta"><strong>UTFPR</strong> | Em andamento</p>
+                <p>4º período</p>
+            </article>
+        </section>
+
+        <aside id="objetivo">
+            <h2>Objetivo profissional</h2>
+            <p class="destaque">
+                Busco oportunidades para desenvolver minhas habilidades em tecnologia,
+                especialmente na área de desenvolvimento web.
+            </p>
+        </aside>
+
+        <section id="mais-sobre-mim">
+            <h2>Mais sobre mim</h2>
+
+            <details>
+                <summary>Interesses profissionais</summary>
+                <p>
+                    Desenvolvimento front-end, interfaces, programação e aprendizado
+                    de novas tecnologias.
+                </p>
+            </details>
+
+            <details>
+                <summary>Disponibilidade</summary>
+                <p>No momento estou cumprindo o serviço militar obrigatório.</p>
+                <p>Ocupação do período noturno com as aulas.</p>
+                <p>Sem outras ocupações.</p>
+            </details>
+        </section>
+
+        <section id="formulario-contato">
+            <h2>Formulário de contato</h2>
+            <p>Prefere me passar seus dados diretamente? Utilize o formulário abaixo.</p>
+            <button id="botaoAbrirModal" type="button">Enviar informações de contato</button>
+
+            <dialog id="modalContato">
+                <form method="dialog">
+                    <h2>Informações de contato</h2>
+
+                    <label for="nomeCompleto">Nome Completo</label>
+                    <input type="text" id="nomeCompleto" name="nomeCompleto" placeholder="Digite seu nome completo" required>
+
+                    <label for="instagram">Link para o Instagram</label>
+                    <input type="url" id="instagram" name="instagram" placeholder="https://instagram.com/seu-usuario">
+
+                    <label for="whatsapp">Número do WhatsApp</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" pattern="[0-9()\-\s+]+">
+
+                    <div class="botoes-modal">
+                        <button type="submit" value="enviar">Enviar</button>
+                        <button type="submit" formnovalidate value="fechar">Fechar</button>
+                    </div>
+                </form>
+            </dialog>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Currículo de Mateus Schommer</p>
+        <p><time datetime="2026">2026</time></p>
+    </footer>
+
+    <script>
+        const botaoAbrirModal = document.getElementById("botaoAbrirModal");
+        const modalContato = document.getElementById("modalContato");
+
+        botaoAbrirModal.addEventListener("click", () => {
+            modalContato.showModal();
+        });
+
+        modalContato.addEventListener("close", () => {
+            if (modalContato.returnValue === "enviar") {
+                const nome = document.getElementById("nomeCompleto").value;
+                alert("Obrigado, " + nome + "! Suas informações de contato foram enviadas.");
+                modalContato.querySelector("form").reset();
+            }
+        });
+    </script>
+
+</body>
+</html>

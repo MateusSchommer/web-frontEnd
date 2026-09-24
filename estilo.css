@@ -1,0 +1,470 @@
+/* ==========================================================
+   Currículo - Mateus Schommer
+   Tema: placa de circuito (verde da placa + trilha de cobre)
+   Fontes: Bricolage Grotesque (externa, Google Fonts) e Georgia (do sistema)
+   ========================================================== */
+
+/* Cores do tema (variáveis CSS)
+   Contrastes calculados (WCAG): texto/fundo 13,7:1 | link/fundo 7,2:1 |
+   link em hover/fundo 6,5:1 | texto claro/cabeçalho 10,8:1 */
+:root {
+    --papel: #eef3ef;
+    --tinta: #17281f;
+    --verde: #1f5a3a;
+    --verde-escuro: #143d27;
+    --verde-claro: #c9dccf;
+    --cobre: #b4530a;
+    --cobre-escuro: #8f3e00;
+    --cobre-claro: #e0913a;
+    --ambar: #f2b56b;
+    --fonte-titulo: "Bricolage Grotesque", Arial, Helvetica, sans-serif;
+    --fonte-texto: Georgia, "Times New Roman", serif;
+}
+
+/* ---------- Seletor UNIVERSAL ---------- */
+* {
+    box-sizing: border-box;
+}
+
+/* ---------- Seletores por ELEMENTO ---------- */
+body {
+    margin: 0;
+    background-color: var(--papel);
+    color: var(--tinta);
+    font-family: var(--fonte-texto);
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--fonte-titulo);
+    line-height: 1.2;
+}
+
+h1 {
+    margin: 0 0 1.25rem 0;
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    margin: 0 0 0.75rem 0;
+    color: var(--verde-escuro);
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+h3 {
+    margin: 1.5rem 0 0.25rem 0;
+    color: var(--verde);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+p {
+    margin: 0 0 0.9rem 0;
+    max-width: 65ch;
+}
+
+ul {
+    margin: 0 0 0.9rem 0;
+    padding-left: 1.25rem;
+}
+
+li {
+    margin-bottom: 0.35rem;
+}
+
+strong {
+    font-weight: 700;
+}
+
+figure {
+    margin: 0 0 1rem 0;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+/* Links: sublinhado (decoração de texto) e cor que muda ao passar o mouse */
+a {
+    color: var(--verde);
+    text-decoration: underline;
+    transition: color 0.15s;
+}
+
+a:hover {
+    color: var(--cobre-escuro);
+}
+
+a:focus,
+button:focus,
+summary:focus {
+    outline: 3px solid var(--cobre);
+    outline-offset: 3px;
+}
+
+/* ---------- Seletores por ATRIBUTO ---------- */
+/* Link de e-mail em negrito */
+a[href^="mailto:"] {
+    font-weight: 700;
+}
+
+/* Links que abrem em nova aba (LinkedIn) em itálico */
+a[target="_blank"] {
+    font-style: italic;
+}
+
+/* Painel de detalhes aberto ganha destaque na cor do título */
+details[open] summary {
+    color: var(--cobre-escuro);
+}
+
+/* Campos do formulário */
+input[type="text"],
+input[type="url"],
+input[type="tel"] {
+    padding: 0.5rem 0.6rem;
+    border: 2px solid var(--verde);
+    border-radius: 4px;
+    background-color: #fff;
+    color: var(--tinta);
+    font-family: var(--fonte-texto);
+    font-size: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="tel"]:focus {
+    outline: 3px solid var(--cobre);
+    outline-offset: 1px;
+}
+
+/* ---------- Cabeçalho ---------- */
+header {
+    padding: 3rem 1rem 2rem 1rem;
+    border-bottom: 5px solid var(--cobre);
+    background-color: var(--verde-escuro);
+    background-image: radial-gradient(#2c6e49 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+    color: var(--papel);
+    text-align: center;
+}
+
+header figure {
+    margin: 0 0 1rem 0;
+}
+
+header figcaption {
+    margin-top: 0.5rem;
+    color: var(--verde-claro);
+}
+
+/* Seletor por ID: foto de perfil redonda com aro de cobre */
+#foto-perfil {
+    display: block;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    border: 4px solid var(--cobre-claro);
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #fff;
+}
+
+/* Seletor por CLASSE */
+.subtitulo {
+    max-width: none;
+    margin-bottom: 1.5rem;
+    color: var(--verde-claro);
+    font-size: 1.2rem;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+}
+
+nav a {
+    color: var(--papel);
+    font-family: var(--fonte-titulo);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Seletor de PSEUDO-CLASSE: link do menu muda de cor e ganha sublinhado no hover */
+nav a:hover {
+    color: var(--ambar);
+    text-decoration: underline;
+}
+
+/* ---------- Conteúdo principal: a "trilha de cobre" ---------- */
+main {
+    position: relative;
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 2rem 3rem;
+}
+
+/* Trilha vertical que liga todas as seções */
+main::before {
+    content: "";
+    position: absolute;
+    top: 2rem;
+    bottom: 1rem;
+    left: 1rem;
+    width: 3px;
+    background-color: var(--cobre);
+}
+
+main > section,
+main > aside {
+    margin-bottom: 2.5rem;
+}
+
+/* "Pino de solda" na trilha, ao lado do título de cada seção */
+main > section > h2,
+main > aside > h2 {
+    position: relative;
+}
+
+main > section > h2::before,
+main > aside > h2::before {
+    content: "";
+    position: absolute;
+    top: 0.3em;
+    left: -37px;
+    width: 14px;
+    height: 14px;
+    border: 3px solid var(--cobre);
+    border-radius: 50%;
+    background-color: var(--papel);
+}
+
+/* ---------- Seção Contato ---------- */
+#contato ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+#contato img {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+.sem-icone {
+    padding-left: 1.75rem;
+}
+
+/* ---------- Seção Habilidades: etiquetas ---------- */
+#habilidades ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding-left: 0;
+    list-style: none;
+}
+
+.tag {
+    margin: 0;
+    padding: 0.3rem 0.9rem;
+    border: 2px solid var(--verde);
+    border-radius: 999px;
+    font-family: var(--fonte-titulo);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* Pseudo-classe estrutural: itens ímpares preenchidos, pares só com contorno */
+.tag:nth-child(odd) {
+    background-color: var(--verde);
+    color: var(--papel);
+}
+
+.tag:nth-child(even) {
+    background-color: transparent;
+    color: var(--verde-escuro);
+}
+
+/* ---------- ODS ---------- */
+#ods img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 3px solid var(--verde-escuro);
+}
+
+/* ---------- Experiência e Educação ---------- */
+#experiencia article:first-of-type h3,
+#educacao article:first-of-type h3 {
+    margin-top: 0.5rem;
+}
+
+/* Período / instituição em fonte oblíqua */
+.meta {
+    margin-bottom: 0.5rem;
+    color: #3d5245;
+    font-style: oblique;
+}
+
+/* ---------- Objetivo profissional (aside) ---------- */
+.destaque {
+    color: var(--verde-escuro);
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* ---------- Mais sobre mim ---------- */
+details {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--verde-claro);
+}
+
+details:first-of-type {
+    border-top: 1px solid var(--verde-claro);
+}
+
+summary {
+    color: var(--verde);
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+details p {
+    margin: 0.6rem 0 0.2rem 0;
+}
+
+/* ---------- Formulário de contato (botão + modal) ---------- */
+#botaoAbrirModal {
+    padding: 0.7rem 1.3rem;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--verde);
+    color: #fff;
+    font-family: var(--fonte-titulo);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+#botaoAbrirModal:hover {
+    background-color: #7a3300;
+}
+
+dialog#modalContato {
+    width: 90%;
+    max-width: 420px;
+    padding: 1.5rem 2rem;
+    border: 3px solid var(--verde-escuro);
+    border-radius: 10px;
+    background-color: var(--papel);
+    color: var(--tinta);
+}
+
+dialog#modalContato::backdrop {
+    background-color: rgba(20, 61, 39, 0.75);
+}
+
+dialog#modalContato h2 {
+    margin-bottom: 0.25rem;
+}
+
+dialog#modalContato form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+dialog#modalContato label {
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+}
+
+dialog#modalContato .botoes-modal {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.8rem;
+    margin: 0.5rem 0 0 0;
+}
+
+dialog#modalContato button {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--verde);
+    border-radius: 6px;
+    background-color: transparent;
+    color: var(--verde-escuro);
+    font-family: var(--fonte-titulo);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+dialog#modalContato button:hover {
+    background-color: var(--verde-claro);
+}
+
+dialog#modalContato button[value="enviar"] {
+    background-color: var(--verde);
+    color: #fff;
+}
+
+dialog#modalContato button[value="enviar"]:hover {
+    background-color: #7a3300;
+    border-color: #7a3300;
+}
+
+/* ---------- Rodapé ---------- */
+footer {
+    padding: 1.5rem 1rem;
+    border-top: 5px solid var(--cobre);
+    background-color: var(--verde-escuro);
+    color: var(--verde-claro);
+    font-family: var(--fonte-titulo);
+    text-align: center;
+}
+
+footer p {
+    max-width: none;
+    margin: 0.2rem 0;
+}
+
+/* ---------- Telas pequenas ---------- */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.45rem;
+    }
+
+    main {
+        padding-left: 2.25rem;
+        padding-right: 1rem;
+    }
+
+    main::before {
+        left: 0.5rem;
+    }
+
+    main > section > h2::before,
+    main > aside > h2::before {
+        left: -33px;
+    }
+
+    dialog#modalContato {
+        padding: 1.25rem 1.25rem;
+    }
+}
